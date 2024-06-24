@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,700");
+
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+body {
+  color: #34517f;
+  margin: 3em auto;
+  text-align: center;
+  background: linear-gradient(to left, #c2e59c, #64b3f4);
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.subhead {
+  font-size: 1.6rem;
+  margin: 0.5em 0;
+}
+
+.subhead::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #34517f;
+  margin: 1em auto;
+  width: 50%;
+}
+
+.grid {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.col {
+  flex: 1;
+  margin: 0 0.5em;
+  padding: 0 0.5em;
+}
+
+/* ============
+   === EMS  === 
+   ============ */
+
+/* The main problem with using em for font size is the idea of compounding */
+/* As if we make parent 16px then its children 2em then child of child 2em
+then child of child of child 3em  */
+/* This last element will have font size=16*2*2*3 which is a very large font*/
+
+/* Take care font-size with em will look for parent font-size */
+/* parent{
+    font-size: 16px;
+}
+child{
+    font-size: 2em;==>16*2=32px;
+} */
+
+/* Any other property with em unit will look for font-size of current element */
+/* This will make using em for padding a good idea as it will be proportional to font-size  */
+/* element{
+    font-size: 13px;
+    padding:2em;==>2*13=26px;
+} */
+.grid {
+  font-size: 18px;
+}
+
+.col--em {
+  font-size: 1em;
+}
+
+.col--em h1 {
+  font-size: 2.5em;
+}
+
+.col--em p {
+  font-size: 1em;
+}
+
+/* ============
+   === REMS === 
+   ============ */
+
+/* REM==Root EM */
+
+/* This unit is more consistent as it only looks for font-size of html element or ::root*/
+
+/* If we want a consistent spacing between elements we can use rem */
+
+.col--rem {
+  /*has no effect on its children as they will look for html font-size*/
+  /* font-size: 500px;  */
+}
+
+.col--rem h1 {
+  font-size: 2.5rem;
+}
+
+.col--rem p {
+  font-size: 1rem;
+}
+
+/* ============
+   Call to action 
+   ============ */
+
+h1 {
+  font-size: 4em;
+  margin: 0.5em 0;
+  line-height: 1;
+}
+
+.call-to-action {
+  background: linear-gradient(to left, #f46b45, #eea849);
+  padding: 3em 0;
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-top: 500px;
+  font-size: 1em;
+}
+
+.call-to-action--small {
+  font-size: 1em;
+}
+
+.btn {
+  display: inline-block;
+  background: black;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* using em for padding may be a good idea to make it proportional to font-size  */
+  /* font-size:16px; */
+  /* padding: 1*25 3*25 */
+  padding: 1em 3em;
+  margin: 0 0.25rem;
+}
+
+.btn--small {
+  /* padding:1*12.5 3*12.5 ;*/
+  font-size: 0.5em;
+}
+
+.btn--lrg {
+  /* padding:1*37.5 3*37.5 ;*/
+  font-size: 1.5em;
+}
