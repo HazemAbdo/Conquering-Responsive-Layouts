@@ -30,6 +30,8 @@ body {
 
   padding: 2em;
   /* height: 300px; */
+  /* We use max-width so in very wide screen we don't encounter the problem of having a very wide container */
+  max-width: 750px;
 }
 .intro-content {
   max-width: 50%;
